@@ -24,6 +24,28 @@ DBOBject 使用runtime + fmdb 封装
 9.只依赖唯一第三方库FMDB
 
 二、如何使用
+
+
+/*
+*  Support multiple data using FALASE OR TRUE
+*  Set TRUE customizable dbFolder () and dbName (), custom database location and file name
+*
+*  Folder Path
++(NSString*)dbFolder;
+*
+*  Database name
++(NSString*)dbName;
+*/
+
+#define SupportMultipleDB TRUE
+
+/*
+* Open DBObject framework console log
+* TRUE Open, FALASE closed
+*/
+#define DBLogOpen 1
+
+
 #import <YUDBFramework/DBOBject.h>
 
 ![.对象继承DBOBject 创建模型](http://static.oschina.net/uploads/space/2015/0821/223509_f4Vw_868062.png)
