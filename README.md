@@ -4,6 +4,7 @@ Welcome to the YUDBFramework wiki!
 感谢FMDB  
 DBOBject 使用runtime + fmdb 封装
 
+
 1.自动建表
 
 2.自动检查增删表字段
@@ -34,6 +35,7 @@ DBOBject 使用runtime + fmdb 封装
 ![.生成目录](http://static.oschina.net/uploads/space/2015/0821/224013_1aEx_868062.png)
 ![3.具体实现](http://static.oschina.net/uploads/space/2015/0821/223849_UUZe_868062.png)
 ![](http://static.oschina.net/uploads/space/2015/0821/224744_ldNG_868062.png)
+
 
 2015-08-21 22:41:14.498 YUDBObjectSample[3004:119272] 
  ||========================================================================||
