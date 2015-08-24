@@ -15,7 +15,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import "DB+Constant.h"
+#import "NSObject+Constant.h"
 
 @interface NSObject (Propert)
 

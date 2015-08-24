@@ -10,7 +10,7 @@
 #import "UserInfo.h"
 #import "DBObj.h"
 
-#import <YUDBFramework/DBOBject.h>
+#import <YUDBFramework/DBObject.h>
 
 
 @implementation ViewController

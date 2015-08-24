@@ -15,6 +15,28 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "NSObject+Config.h"
+
+
+/*
+ *  Support multiple data using FALASE OR TRUE
+ 
+ *  Set TRUE customizable dbFolder () and dbName (), custom database location and file name
+ 
+ *  Folder Path
+ +(NSString*)dbFolder;
+ *
+ *  Database name
+ +(NSString*)dbName;
+ */
+#define SupportMultipleDB TRUE
+
+
+/*
+ * Open DBObject framework console log
+ * TRUE Open, FALASE closed
+ */
+#define DBLogOpen 1
 
 
 

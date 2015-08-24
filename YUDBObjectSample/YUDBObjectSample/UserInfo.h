@@ -10,7 +10,7 @@
 #import <YUDBFramework/DBOBject.h>
 
 
-@interface UserInfo : DBOBject 
+@interface UserInfo : DBObject 
 
 @property (assign,nonatomic)int age;
 

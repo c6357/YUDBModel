@@ -6,13 +6,12 @@
 //          ||        ==            //  \\
 //          ||       ========      //    \\
 //
-//  DBOBject.h
+//  DBObject.h
 //  YUDBObject
 //
 //  Created by BruceYu on 15/8/12.
 //  Copyright (c) 2015年 BruceYu. All rights reserved.
 //
-
 
 /* Database operations DBObject use:*/
 /* .Inherited DBObject class*/
@@ -20,8 +19,9 @@
 
 /*
  *  Support multiple data using FALASE OR TRUE
+ 
  *  Set TRUE customizable dbFolder () and dbName (), custom database location and file name
- *
+ 
  *  Folder Path
  +(NSString*)dbFolder;
  *
@@ -29,21 +29,13 @@
  +(NSString*)dbName;
  */
 
-#define SupportMultipleDB TRUE
-
-/*
- * Open DBObject framework console log
- * TRUE Open, FALASE closed
- */
-#define DBLogOpen 1
-
-
 
 #import <Foundation/Foundation.h>
-#import "YUDB/DBBaseObject.h"
-#import "YUDB/NSObject+DB.h"
+#import "NSObject+DB.h"
+#import "DBBaseObject.h"
 
-@interface DBOBject : DBBaseObject
+
+@interface DBObject : DBBaseObject
 
 //Data creation time
 @property (nonatomic,strong) NSString *createDate;

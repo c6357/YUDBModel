@@ -11,7 +11,7 @@
 #import "UserInfo.h"
 
 
-@interface DBObj : DBOBject
+@interface DBObj : DBObject
 
 @property (strong,nonatomic)NSString *name;
 

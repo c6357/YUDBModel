@@ -14,8 +14,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../FMDB/FMDB.h"
-#import "DB+Constant.h"
+#import "FMDB.h"
+#import "NSObject+Constant.h"
 
 /*
  * DBObject base cass
@@ -65,7 +65,6 @@ arrayObjCustParser:(DB_Block_Dealize_Parser)_custParser;
  *Save with key
  */
 -(BOOL)save:(NSString*)keyName;
-
 -(BOOL)saveWtihConstraints:(NSArray*)keyNames;
 
 
