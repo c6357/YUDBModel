@@ -14,7 +14,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDB.h"
+#import "../FMDB/FMDB.h"
 
 
 @interface NSObject (DB)

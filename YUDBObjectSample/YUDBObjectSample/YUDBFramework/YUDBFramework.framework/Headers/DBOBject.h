@@ -31,8 +31,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import "NSObject+DB.h"
-#import "DBBaseObject.h"
+#import "YUDB/NSObject+DB.h"
+#import "YUDB/DBBaseObject.h"
 
 
 @interface DBObject : DBBaseObject
