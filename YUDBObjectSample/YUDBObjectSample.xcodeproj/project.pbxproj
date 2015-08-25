@@ -16,7 +16,6 @@
 		1864FB361B86F67800734DD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864FB341B86F67800734DD6 /* LaunchScreen.xib */; };
 		1864FBFB1B871B3A00734DD6 /* DBObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBF81B871B3A00734DD6 /* DBObj.m */; };
 		1864FBFC1B871B3A00734DD6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBFA1B871B3A00734DD6 /* UserInfo.m */; };
-		1864FC091B87297B00734DD6 /* YUDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC061B87297B00734DD6 /* YUDBFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		1864FBF81B871B3A00734DD6 /* DBObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBObj.m; sourceTree = "<group>"; };
 		1864FBF91B871B3A00734DD6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		1864FBFA1B871B3A00734DD6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
-		1864FC061B87297B00734DD6 /* YUDBFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YUDBFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				181269941B8C3C1400B91904 /* libsqlite3.dylib in Frameworks */,
-				1864FC091B87297B00734DD6 /* YUDBFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +97,6 @@
 		1864FBEE1B871A7D00734DD6 /* YUDBFramework */ = {
 			isa = PBXGroup;
 			children = (
-				1864FC061B87297B00734DD6 /* YUDBFramework.framework */,
 			);
 			path = YUDBFramework;
 			sourceTree = "<group>";
