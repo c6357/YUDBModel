@@ -7,47 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181269941B8C3C1400B91904 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 181269931B8C3C1400B91904 /* libsqlite3.dylib */; };
 		1864FB281B86F67800734DD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FB271B86F67800734DD6 /* main.m */; };
 		1864FB2B1B86F67800734DD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FB2A1B86F67800734DD6 /* AppDelegate.m */; };
 		1864FB2E1B86F67800734DD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FB2D1B86F67800734DD6 /* ViewController.m */; };
 		1864FB311B86F67800734DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1864FB2F1B86F67800734DD6 /* Main.storyboard */; };
 		1864FB331B86F67800734DD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1864FB321B86F67800734DD6 /* Images.xcassets */; };
 		1864FB361B86F67800734DD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864FB341B86F67800734DD6 /* LaunchScreen.xib */; };
-		1864FB421B86F67800734DD6 /* YUDBObjectSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FB411B86F67800734DD6 /* YUDBObjectSampleTests.m */; };
 		1864FBFB1B871B3A00734DD6 /* DBObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBF81B871B3A00734DD6 /* DBObj.m */; };
 		1864FBFC1B871B3A00734DD6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBFA1B871B3A00734DD6 /* UserInfo.m */; };
-		1864FC071B87297B00734DD6 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC041B87297B00734DD6 /* libFMDB.a */; };
-		1864FC081B87297B00734DD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC051B87297B00734DD6 /* libPods.a */; };
 		1864FC091B87297B00734DD6 /* YUDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC061B87297B00734DD6 /* YUDBFramework.framework */; };
-		67D1A84C1B87595B004F946A /* YUDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC061B87297B00734DD6 /* YUDBFramework.framework */; };
-		67D1A84D1B87595B004F946A /* YUDBFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1864FC061B87297B00734DD6 /* YUDBFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1864FB3C1B86F67800734DD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1864FB1A1B86F67800734DD6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1864FB211B86F67800734DD6;
-			remoteInfo = YUDBObjectSample;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1864FBFF1B871FA500734DD6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				67D1A84D1B87595B004F946A /* YUDBFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		181269931B8C3C1400B91904 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1864FB221B86F67800734DD6 /* YUDBObjectSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUDBObjectSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1864FB261B86F67800734DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1864FB271B86F67800734DD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,15 +31,10 @@
 		1864FB301B86F67800734DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1864FB321B86F67800734DD6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1864FB351B86F67800734DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1864FB3B1B86F67800734DD6 /* YUDBObjectSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUDBObjectSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1864FB401B86F67800734DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1864FB411B86F67800734DD6 /* YUDBObjectSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUDBObjectSampleTests.m; sourceTree = "<group>"; };
 		1864FBF71B871B3A00734DD6 /* DBObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBObj.h; sourceTree = "<group>"; };
 		1864FBF81B871B3A00734DD6 /* DBObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBObj.m; sourceTree = "<group>"; };
 		1864FBF91B871B3A00734DD6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		1864FBFA1B871B3A00734DD6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
-		1864FC041B87297B00734DD6 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFMDB.a; sourceTree = "<group>"; };
-		1864FC051B87297B00734DD6 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = "<group>"; };
 		1864FC061B87297B00734DD6 /* YUDBFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YUDBFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,17 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181269941B8C3C1400B91904 /* libsqlite3.dylib in Frameworks */,
 				1864FC091B87297B00734DD6 /* YUDBFramework.framework in Frameworks */,
-				67D1A84C1B87595B004F946A /* YUDBFramework.framework in Frameworks */,
-				1864FC071B87297B00734DD6 /* libFMDB.a in Frameworks */,
-				1864FC081B87297B00734DD6 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1864FB381B86F67800734DD6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +54,8 @@
 		1864FB191B86F67800734DD6 = {
 			isa = PBXGroup;
 			children = (
+				181269931B8C3C1400B91904 /* libsqlite3.dylib */,
 				1864FB241B86F67800734DD6 /* YUDBObjectSample */,
-				1864FB3E1B86F67800734DD6 /* YUDBObjectSampleTests */,
 				1864FB231B86F67800734DD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				1864FB221B86F67800734DD6 /* YUDBObjectSample.app */,
-				1864FB3B1B86F67800734DD6 /* YUDBObjectSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,29 +97,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1864FB3E1B86F67800734DD6 /* YUDBObjectSampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				1864FB411B86F67800734DD6 /* YUDBObjectSampleTests.m */,
-				1864FB3F1B86F67800734DD6 /* Supporting Files */,
-			);
-			path = YUDBObjectSampleTests;
-			sourceTree = "<group>";
-		};
-		1864FB3F1B86F67800734DD6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1864FB401B86F67800734DD6 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		1864FBEE1B871A7D00734DD6 /* YUDBFramework */ = {
 			isa = PBXGroup;
 			children = (
 				1864FC061B87297B00734DD6 /* YUDBFramework.framework */,
-				1864FC041B87297B00734DD6 /* libFMDB.a */,
-				1864FC051B87297B00734DD6 /* libPods.a */,
 			);
 			path = YUDBFramework;
 			sourceTree = "<group>";
@@ -176,7 +115,6 @@
 				1864FB1E1B86F67800734DD6 /* Sources */,
 				1864FB1F1B86F67800734DD6 /* Frameworks */,
 				1864FB201B86F67800734DD6 /* Resources */,
-				1864FBFF1B871FA500734DD6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,24 +124,6 @@
 			productName = YUDBObjectSample;
 			productReference = 1864FB221B86F67800734DD6 /* YUDBObjectSample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1864FB3A1B86F67800734DD6 /* YUDBObjectSampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1864FB481B86F67800734DD6 /* Build configuration list for PBXNativeTarget "YUDBObjectSampleTests" */;
-			buildPhases = (
-				1864FB371B86F67800734DD6 /* Sources */,
-				1864FB381B86F67800734DD6 /* Frameworks */,
-				1864FB391B86F67800734DD6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1864FB3D1B86F67800734DD6 /* PBXTargetDependency */,
-			);
-			name = YUDBObjectSampleTests;
-			productName = YUDBObjectSampleTests;
-			productReference = 1864FB3B1B86F67800734DD6 /* YUDBObjectSampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -216,10 +136,6 @@
 				TargetAttributes = {
 					1864FB211B86F67800734DD6 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					1864FB3A1B86F67800734DD6 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 1864FB211B86F67800734DD6;
 					};
 				};
 			};
@@ -237,7 +153,6 @@
 			projectRoot = "";
 			targets = (
 				1864FB211B86F67800734DD6 /* YUDBObjectSample */,
-				1864FB3A1B86F67800734DD6 /* YUDBObjectSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,13 +165,6 @@
 				1864FB311B86F67800734DD6 /* Main.storyboard in Resources */,
 				1864FB361B86F67800734DD6 /* LaunchScreen.xib in Resources */,
 				1864FB331B86F67800734DD6 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1864FB391B86F67800734DD6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,23 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1864FB371B86F67800734DD6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1864FB421B86F67800734DD6 /* YUDBObjectSampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1864FB3D1B86F67800734DD6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1864FB211B86F67800734DD6 /* YUDBObjectSample */;
-			targetProxy = 1864FB3C1B86F67800734DD6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1864FB2F1B86F67800734DD6 /* Main.storyboard */ = {
@@ -407,6 +299,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YUDBObjectSample/YUDBFramework",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -425,41 +318,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YUDBObjectSample/YUDBFramework",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		1864FB491B86F67800734DD6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = YUDBObjectSampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YUDBObjectSample.app/YUDBObjectSample";
-			};
-			name = Debug;
-		};
-		1864FB4A1B86F67800734DD6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = YUDBObjectSampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YUDBObjectSample.app/YUDBObjectSample";
 			};
 			name = Release;
 		};
@@ -480,15 +340,6 @@
 			buildConfigurations = (
 				1864FB461B86F67800734DD6 /* Debug */,
 				1864FB471B86F67800734DD6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1864FB481B86F67800734DD6 /* Build configuration list for PBXNativeTarget "YUDBObjectSampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1864FB491B86F67800734DD6 /* Debug */,
-				1864FB4A1B86F67800734DD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

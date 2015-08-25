@@ -6,11 +6,35 @@
 	<dict>
 		<key>Headers/DBBaseObject.h</key>
 		<data>
-		ah/PLe//9ZStROA3zkC5S7tsTYE=
+		z+5GV1WRHM09x3FCj934xsua/dc=
 		</data>
 		<key>Headers/DBObject.h</key>
 		<data>
 		AxdmGqhXcmhFRkKFEyxZyqEkq7g=
+		</data>
+		<key>Headers/FMDB.h</key>
+		<data>
+		xceJ4tfa/qMtJSZE8L5nh4UE5v8=
+		</data>
+		<key>Headers/FMDatabase.h</key>
+		<data>
+		EKanrBW/CRu3GLvzl4+/Ex3B4Lo=
+		</data>
+		<key>Headers/FMDatabaseAdditions.h</key>
+		<data>
+		oxakWMD8TPDVTYCJyPm67yj4T9w=
+		</data>
+		<key>Headers/FMDatabasePool.h</key>
+		<data>
+		fhka1W8UmwhDZ33/XZQWcB+RNmM=
+		</data>
+		<key>Headers/FMDatabaseQueue.h</key>
+		<data>
+		NoKI7kTu+rSPvGAaqdnIQTra6fc=
+		</data>
+		<key>Headers/FMResultSet.h</key>
+		<data>
+		1zKZSIuKK6Busa4n3wtLzDDAs34=
 		</data>
 		<key>Headers/NSObject+Config.h</key>
 		<data>
@@ -22,7 +46,7 @@
 		</data>
 		<key>Headers/NSObject+DB.h</key>
 		<data>
-		Xs6bbeQjMVvST7pegU5mfUrAC4s=
+		nuKpYi4mJR1iNfIdlTkHdpTZXeY=
 		</data>
 		<key>Headers/NSObject+Propert.h</key>
 		<data>
@@ -30,18 +54,42 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		APkK2BqS17+jCTcVFv+xyhH+TQM=
+		pdzCfuoReZyKIJlA4jhwL0t5+qE=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/DBBaseObject.h</key>
 		<data>
-		ah/PLe//9ZStROA3zkC5S7tsTYE=
+		z+5GV1WRHM09x3FCj934xsua/dc=
 		</data>
 		<key>Headers/DBObject.h</key>
 		<data>
 		AxdmGqhXcmhFRkKFEyxZyqEkq7g=
+		</data>
+		<key>Headers/FMDB.h</key>
+		<data>
+		xceJ4tfa/qMtJSZE8L5nh4UE5v8=
+		</data>
+		<key>Headers/FMDatabase.h</key>
+		<data>
+		EKanrBW/CRu3GLvzl4+/Ex3B4Lo=
+		</data>
+		<key>Headers/FMDatabaseAdditions.h</key>
+		<data>
+		oxakWMD8TPDVTYCJyPm67yj4T9w=
+		</data>
+		<key>Headers/FMDatabasePool.h</key>
+		<data>
+		fhka1W8UmwhDZ33/XZQWcB+RNmM=
+		</data>
+		<key>Headers/FMDatabaseQueue.h</key>
+		<data>
+		NoKI7kTu+rSPvGAaqdnIQTra6fc=
+		</data>
+		<key>Headers/FMResultSet.h</key>
+		<data>
+		1zKZSIuKK6Busa4n3wtLzDDAs34=
 		</data>
 		<key>Headers/NSObject+Config.h</key>
 		<data>
@@ -53,7 +101,7 @@
 		</data>
 		<key>Headers/NSObject+DB.h</key>
 		<data>
-		Xs6bbeQjMVvST7pegU5mfUrAC4s=
+		nuKpYi4mJR1iNfIdlTkHdpTZXeY=
 		</data>
 		<key>Headers/NSObject+Propert.h</key>
 		<data>

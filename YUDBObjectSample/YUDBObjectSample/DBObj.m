@@ -11,7 +11,7 @@
 @implementation DBObj
 
 +(NSString *)dbName{
-    return @"DB.db";
+    return @"base.db";
 }
 
 +(NSString *)dbFolder{
