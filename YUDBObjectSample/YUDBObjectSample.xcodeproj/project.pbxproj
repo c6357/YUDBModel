@@ -16,7 +16,24 @@
 		1864FB361B86F67800734DD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864FB341B86F67800734DD6 /* LaunchScreen.xib */; };
 		1864FBFB1B871B3A00734DD6 /* DBObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBF81B871B3A00734DD6 /* DBObj.m */; };
 		1864FBFC1B871B3A00734DD6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864FBFA1B871B3A00734DD6 /* UserInfo.m */; };
+		677567C91B8C94F4001D0175 /* YUDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 677567C81B8C94F4001D0175 /* YUDBFramework.framework */; };
+		677567CA1B8C9513001D0175 /* YUDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 677567C81B8C94F4001D0175 /* YUDBFramework.framework */; };
+		677567CB1B8C9513001D0175 /* YUDBFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 677567C81B8C94F4001D0175 /* YUDBFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		677567CC1B8C9513001D0175 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				677567CB1B8C9513001D0175 /* YUDBFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		181269931B8C3C1400B91904 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -34,6 +51,7 @@
 		1864FBF81B871B3A00734DD6 /* DBObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBObj.m; sourceTree = "<group>"; };
 		1864FBF91B871B3A00734DD6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		1864FBFA1B871B3A00734DD6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		677567C81B8C94F4001D0175 /* YUDBFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YUDBFramework.framework; path = YUDBObjectSample/YUDBFramework.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677567CA1B8C9513001D0175 /* YUDBFramework.framework in Frameworks */,
 				181269941B8C3C1400B91904 /* libsqlite3.dylib in Frameworks */,
+				677567C91B8C94F4001D0175 /* YUDBFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +117,7 @@
 		1864FBEE1B871A7D00734DD6 /* YUDBFramework */ = {
 			isa = PBXGroup;
 			children = (
+				677567C81B8C94F4001D0175 /* YUDBFramework.framework */,
 			);
 			path = YUDBFramework;
 			sourceTree = "<group>";
@@ -111,6 +132,7 @@
 				1864FB1E1B86F67800734DD6 /* Sources */,
 				1864FB1F1B86F67800734DD6 /* Frameworks */,
 				1864FB201B86F67800734DD6 /* Resources */,
+				677567CC1B8C9513001D0175 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +310,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YUDBObjectSample/YUDBFramework",
+					"$(PROJECT_DIR)/YUDBObjectSample",
 				);
 				INFOPLIST_FILE = YUDBObjectSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -307,6 +330,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YUDBObjectSample/YUDBFramework",
+					"$(PROJECT_DIR)/YUDBObjectSample",
 				);
 				INFOPLIST_FILE = YUDBObjectSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
