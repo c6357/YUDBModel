@@ -25,7 +25,7 @@
     UserInfo *user = [[UserInfo alloc] init];
     user.name = @"test";
     user.phone = @"18521911111";
-    [user save:@"name"];
+//    [user save:@"name"];
     
     NSMutableArray *arr = [NSMutableArray array];
     for (int i = 0; i<15; i++) {
@@ -41,8 +41,9 @@
     obj.phone = @"123456789";
     obj.info = user;
     obj.infoArry = arr;
+    [obj save:@"name"];
     
-    [DBObj save:obj];
+//    [DBObj save:obj];
 //     [obj saveWtihConstraints:@[@"name"]];
     
 //    [obj deleteWithKey:@"name"];
