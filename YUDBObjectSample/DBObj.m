@@ -11,7 +11,7 @@
 @implementation DBObj
 
 +(NSString *)dbName{
-    return @"base.db";
+    return @"Base.db";
 }
 
 +(NSString *)dbFolder{
@@ -22,7 +22,11 @@
     return @[];
 }
 
-//Deserialize json -> Class
+/**
+ *  Deserialize json -> Class
+ *
+ *  @param _dict <#_dict description#>
+ */
 -(void)Deserialize:(NSDictionary *)_dict
 {
     [super Deserialize:_dict arrayParserObj:^Class(NSString *field) {

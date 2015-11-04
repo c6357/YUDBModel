@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  YUDBObjectSample
 //
-//  Created by yuzhx on 15/8/29.
+//  Created by BruceYu on 15/8/29.
 //  Copyright (c) 2015年 BruceYu. All rights reserved.
 //
 

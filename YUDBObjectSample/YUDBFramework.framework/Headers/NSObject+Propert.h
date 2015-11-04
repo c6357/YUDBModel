@@ -19,8 +19,19 @@
 
 @interface NSObject (Propert)
 
+/**
+ *  <#Description#>
+ *
+ *  @param enumeration <#enumeration description#>
+ */
 + (void)enumerateObjectsKeys:(DB_Block_ParserForArrayVoidPlus)enumeration;
 
+
+/**
+ *  <#Description#>
+ *
+ *  @param enumeration <#enumeration description#>
+ */
 - (void)enumerateObjectsKeys:(DB_Block_ParserForArrayVoid)enumeration;
 
 @end

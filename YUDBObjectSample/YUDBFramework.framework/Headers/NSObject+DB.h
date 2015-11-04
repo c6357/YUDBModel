@@ -22,6 +22,7 @@
 /**
  *  table create
  */
+
 +(void)creteTable;
 
 /**
@@ -66,32 +67,49 @@
 +(BOOL)saveObjs:(NSArray *)objs;
 
 
+
 /**
  *  select * from   SELECT * FROM tableName WHERE keyName = value
+ *
+ *  @param keyName <#keyName description#>
+ *  @param value   <#value description#>
  *
  *  @return select the result (DBObject model)
  */
 +(id)get:(NSString*)keyName value:(NSString*)value;
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value
+
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value
+ *
+ *  @param keyName <#keyName description#>
+ *  @param value   <#value description#>
  *
  *  @return select the result (DBObject model array)
  */
 +(NSArray*)getList:(NSString*)keyName value:(NSString*)value;
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
+
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
  *
- *@return select the result (DBObject model array)
+ *  @param keyValues <#keyValues description#>
+ *
+ *  @return select the result (DBObject model array)
  */
 +(NSArray*)getWtihConstraints:(NSDictionary*)keyValues;
 
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
+
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
  *
- *@return select the result (DBObject model array)
+ *  @param where   <#where description#>
+ *  @param groupBy <#groupBy description#>
+ *  @param orderBy <#orderBy description#>
+ *  @param limit   <#limit description#>
+ *
+ *  @return select the result (DBObject model array)
  */
 +(NSArray *)selectWhere:(NSString *)where groupBy:(NSString *)groupBy orderBy:(NSString *)orderBy limit:(NSString *)limit;
 
@@ -132,12 +150,12 @@
 
 
 /**
-  * Create a need to save the file to the Documents directory
-  *
-  *param Directories folder name
-  *
-  *return Returns successfully created folder path
- **/
+ *  Create a need to save the file to the Documents directory
+ *
+ *  @param Directories folder name
+ *
+ *  @return successfully created folder path
+ */
 + (NSString*)createFileDirectories:(NSString*)Directories;
 
 @end

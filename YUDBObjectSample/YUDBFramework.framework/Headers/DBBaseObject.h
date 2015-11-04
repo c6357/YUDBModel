@@ -23,13 +23,15 @@
 @interface DBBaseObject : NSObject
 
 
-
 /*
  *  Model to save data, set the fields you want to ignore
  */
 +(NSArray *)dbIgnoreFields;
 
-/*
+/**
+ *  <#Description#>
+ *
+ *  @param dest <#dest description#>
  */
 //-(void)copyTo:(NSObject*)dest;
 
@@ -47,29 +49,40 @@
     arrayObjParser:(DB_Block_ParserForArray)_parser
 arrayObjCustParser:(DB_Block_Dealize_Parser)_custParser;
 
-/*
- *Deserialize DB file
+/**
+ *  Deserialize DB file
+ *
+ *  @param reslut <#reslut description#>
  */
 -(void)DeserializeFromDBResult:(FMResultSet*)reslut;
 
 
-/*
- *Delete with keyName
+
+/**
+ *  Delete with keyName
+ *
+ *  @param keyName <#keyName description#>
  */
 -(void)deleteWithKey:(NSString*)keyName;
 
 -(void)deleteWtihConstraints:(NSArray*)keyNames;
 
 
-/*
- *Save with key
+/**
+ *  Save with key
+ *
+ *  @param keyName <#keyName description#>
+ *
+ *  @return <#return value description#>
  */
 -(BOOL)save:(NSString*)keyName;
 -(BOOL)saveWtihConstraints:(NSArray*)keyNames;
 
 
-/*
- *Serialize Class -> json
+/**
+ *  Serialize Class -> json
+ *
+ *  @return <#return value description#>
  */
 -(NSDictionary *)dictory;
 

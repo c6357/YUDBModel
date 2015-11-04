@@ -39,7 +39,6 @@
 #define DBLogOpen 1
 
 
-
 typedef NSObject* (^DB_Block_Dealize_Parser)(NSString *field,NSArray *array);
 
 typedef Class (^DB_Block_ParserForArray)(NSString *field);
@@ -75,11 +74,18 @@ typedef void (^DB_Block_ParserForArrayVoidPlus)(NSString *field,BOOL *stop);
 #define ToString(args)[NSString stringWithFormat:@"%@",args]
 
 
+#define YU_STATEMENT_Strong       @property(nonatomic,strong)
+#define YU_STATEMENT_Assign       @property(nonatomic,assign)
 
-// .h文件
+
+
+
+/**
+ *  Singleton
+ */
+
 #define SingletonH(name) + (instancetype)shared##name;
 
-// .m文件
 #if __has_feature(objc_arc)
 
 #define SingletonM(name) \

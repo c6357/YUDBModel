@@ -2,8 +2,8 @@
 //  UserInfo.m
 //  YUDBObject
 //
-//  Created by yuzhx on 15/8/12.
-//  Copyright (c) 2015年 C6357. All rights reserved.
+//  Created by BruceYu on 15/8/12.
+//  Copyright (c) 2015年 BruceYu. All rights reserved.
 //
 
 #import "UserInfo.h"

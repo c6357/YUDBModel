@@ -37,32 +37,43 @@
 
 @interface DBObject : DBBaseObject
 
-//Data creation time
-@property (nonatomic,strong) NSString *createDate;
+/**
+ *  Data creation time
+ */
+YU_STATEMENT_Strong NSString *createDate;
 
-//Unique identifier ID, Warning: Do not modify and ignored
-@property (nonatomic,strong) NSString *dId;
+/**
+ *  Unique identifier ID, Warning: Do not modify and ignored
+ */
+YU_STATEMENT_Strong NSString *dId;
 
-//Associated with the parent ID, used to query
-@property (nonatomic,strong) NSString *parentId;
+/**
+ *  Associated with the parent ID, used to query
+ */
+YU_STATEMENT_Strong NSString *parentId;
 
 
-/*
- *  Folder Path 
- *  Default Sandbox project folder name
+/**
+ *  Folder Path
+ *
+ *  @return Default Sandbox project folder name
  */
 +(NSString*)dbFolder;
 
 
-/*
+
+/**
  *  Database name
- *  Default bundleName
+ *
+ *  @return Default bundleName
  */
 +(NSString*)dbName;
 
 
-/*
+/**
  *  Model to save data, set the fields you want to ignore
+ *
+ *  @return <#return value description#>
  */
 +(NSArray *)dbIgnoreFields;
 
@@ -71,8 +82,10 @@
 //-(void)copyTo:(NSObject*)dest;
 
 
-/*
- *Deserialize json -> Class
+/**
+ *  Deserialize json -> Class
+ *
+ *  @param _dict <#_dict description#>
  */
 -(void)Deserialize:(NSDictionary*)_dict;
 
@@ -84,18 +97,24 @@
     arrayObjParser:(DB_Block_ParserForArray)_parser
 arrayObjCustParser:(DB_Block_Dealize_Parser)_custParser;
 
-/*
- *Deserialize DB data
+/**
+ *  Deserialize DB data
+ *
+ *  @param reslut <#reslut description#>
  */
 -(void)DeserializeFromDBResult:(FMResultSet*)reslut;
 
-/*
- *Serialize Class -> json (depth Analytical Model)
+/**
+ *  Serialize Class -> json (depth Analytical Model)
+ *
+ *  @return <#return value description#>
  */
 -(NSDictionary *)dictory;
 
-/*
- *Serialize Class -> json (shallow Analytical Model)
+/**
+ *  Serialize Class -> json (shallow Analytical Model)
+ *
+ *  @return <#return value description#>
  */
 -(NSDictionary *)dictoryProperties;
 
@@ -145,63 +164,92 @@ arrayObjCustParser:(DB_Block_Dealize_Parser)_custParser;
 /**
  *  select * from   SELECT * FROM tableName WHERE keyName = value
  *
+ *  @param keyName <#keyName description#>
+ *  @param value   <#value description#>
+ *
  *  @return select the result (DBObject model)
  */
 +(id)get:(NSString*)keyName value:(NSString*)value;
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value
+
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value
+ *
+ *  @param keyName <#keyName description#>
+ *  @param value   <#value description#>
  *
  *  @return select the result (DBObject model array)
  */
 +(NSArray*)getList:(NSString*)keyName value:(NSString*)value;
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
+
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
  *
- *@return select the result (DBObject model array)
+ *  @param keyValues <#keyValues description#>
+ *
+ *  @return select the result (DBObject model array)
  */
 +(NSArray*)getWtihConstraints:(NSDictionary*)keyValues;
 
 
-/*
- * select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
+/**
+ *  select * from   SELECT * FROM class WHERE keyName = value and keyName = value..
  *
- *@return select the result (DBObject model array)
+ *  @param where   <#where description#>
+ *  @param groupBy <#groupBy description#>
+ *  @param orderBy <#orderBy description#>
+ *  @param limit   <#limit description#>
+ *
+ *  @return select the result (DBObject model array)
  */
 +(NSArray *)selectWhere:(NSString *)where groupBy:(NSString *)groupBy orderBy:(NSString *)orderBy limit:(NSString *)limit;
 
 
-/*
- * Get all the data into the table
+/**
+ *  Get all the data into the table
+ *
+ *  @return <#return value description#>
  */
 +(NSArray*)getAll;
 
-/*
+/**
  *  Remove all
  */
 +(void)deleteAll;
 
-/*
- *Delete with keyName
+/**
+ *  Delete with keyName
+ *
+ *  @param keyName <#keyName description#>
  */
 -(void)deleteWithKey:(NSString*)keyName;
 
 
-/*
- *Delete with keyNames
+/**
+ *  Delete with keyNames
+ *
+ *  @param keyNames <#keyNames description#>
  */
 -(void)deleteWtihConstraints:(NSArray*)keyNames;
 
 
-/*
- *Save with keyName
+/**
+ *  Save with keyName
+ *
+ *  @param keyName <#keyName description#>
+ *
+ *  @return <#return value description#>
  */
 -(BOOL)save:(NSString*)keyName;
 
 
-/*
- *Save with keyNames
+/**
+ *  Save with keyNames
+ *
+ *  @param keyNames <#keyNames description#>
+ *
+ *  @return <#return value description#>
  */
 -(BOOL)saveWtihConstraints:(NSArray*)keyNames;
 
