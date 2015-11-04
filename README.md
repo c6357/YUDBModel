@@ -1,7 +1,5 @@
 Welcome to the YUDBFramework!
 
-博客地址：http://my.oschina.net/u/868062/blog/495648
-
 一、DBOBject 介绍
 
 感谢FMDB  
