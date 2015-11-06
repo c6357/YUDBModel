@@ -13,12 +13,12 @@
 
 @interface DBObj : DBObject
 
-@property (strong,nonatomic)NSString *name;
+YU_STATEMENT_Strong NSString *name;
 
-@property (strong,nonatomic)NSString *phone;
+YU_STATEMENT_Strong NSString *phone;
 
-@property (strong,nonatomic)UserInfo *info;
+YU_STATEMENT_Strong UserInfo *info;
 
-@property (strong,nonatomic)NSArray *infoArry;
+YU_STATEMENT_Strong NSArray *infoArry;
 
 @end

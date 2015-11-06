@@ -12,12 +12,12 @@
 
 @interface UserInfo : DBObject 
 
-@property (strong,nonatomic)NSString *name;
+YU_STATEMENT_Strong NSString *name;
 
-@property (strong,nonatomic)NSString *phone;
+YU_STATEMENT_Strong NSString *phone;
 
-@property (assign,nonatomic)int age;
+YU_STATEMENT_Assign int age;
 
-@property (assign,nonatomic)int sex;
+YU_STATEMENT_Assign int sex;
 
 @end

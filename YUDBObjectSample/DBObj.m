@@ -10,14 +10,30 @@
 
 @implementation DBObj
 
+/**
+ *  数据库名
+ *
+ *  @return <#return value description#>
+ */
 +(NSString *)dbName{
     return @"Base.db";
 }
 
+/**
+ *  数据库路径
+ *
+ *  @return <#return value description#>
+ */
 +(NSString *)dbFolder{
     return [NSObject createFileDirectories:@"base"];
 }
 
+
+/**
+ *  需要过滤的数据库字段
+ *
+ *  @return <#return value description#>
+ */
 +(NSArray *)dbIgnoreFields{
     return @[];
 }
