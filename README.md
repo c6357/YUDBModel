@@ -36,6 +36,7 @@ DBOBject 使用runtime + fmdb 封装
 ![.数据库展现](http://static.oschina.net/uploads/space/2015/0821/224744_ldNG_868062.png)
 
 .关联查询 运行结果
+
     NSArray *userArry = [DBObj getAll];
     for (DBObj *info in userArry) {
          
