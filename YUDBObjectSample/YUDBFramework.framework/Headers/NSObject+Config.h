@@ -34,4 +34,6 @@
 #define DBLogOpen 1
 
 
+#define YUDBLogOpen 0
+
 #endif

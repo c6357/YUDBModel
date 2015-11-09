@@ -32,13 +32,6 @@
 #define SupportMultipleDB TRUE
 
 
-/*
- * Open DBObject framework console log
- * TRUE Open, FALASE closed
- */
-#define DBLogOpen 1
-
-
 typedef NSObject* (^DB_Block_Dealize_Parser)(NSString *field,NSArray *array);
 
 typedef Class (^DB_Block_ParserForArray)(NSString *field);
@@ -55,6 +48,13 @@ typedef void (^DB_Block_ParserForArrayVoidPlus)(NSString *field,BOOL *stop);
 #else
 #    define DBLog(...) {}
 #endif
+
+#if YUDBLogOpen
+#    define YUDBLog(...) NSLog(__VA_ARGS__)
+#else
+#    define YUDBLog(...) {}
+#endif
+
 
 #define bundleName [[NSBundle mainBundle] infoDictionary][(NSString *)kCFBundleNameKey]
 
@@ -79,6 +79,21 @@ typedef void (^DB_Block_ParserForArrayVoidPlus)(NSString *field,BOOL *stop);
 
 
 
+#ifndef	weakify
+#if __has_feature(objc_arc)
+#define weakify( x )	autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
+#else
+#define weakify( x )	autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;
+#endif
+#endif
+
+#ifndef	strongify
+#if __has_feature(objc_arc)
+#define strongify( x )	try{} @finally{} __typeof__(x) x = __weak_##x##__;
+#else
+#define strongify( x )	try{} @finally{} __typeof__(x) x = __block_##x##__;
+#endif
+#endif
 
 /**
  *  Singleton
