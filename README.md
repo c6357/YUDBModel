@@ -27,7 +27,7 @@ DBOBject 使用runtime + fmdb 封装
 
 ![.对象继承DBOBject 创建模型](http://static.oschina.net/uploads/space/2015/1109/100242_j4U9_868062.png)
 
-![2.自定义名字和路径，序列化属性](http://static.oschina.net/uploads/space/2015/1109/100259_SZv6_868062.png)
+![.自定义名字和路径，序列化属性](http://static.oschina.net/uploads/space/2015/1109/100259_SZv6_868062.png)
 
 
 ![.生成目录](http://static.oschina.net/uploads/space/2015/0821/224011_3fPy_868062.png)
@@ -35,4 +35,16 @@ DBOBject 使用runtime + fmdb 封装
 
 ![.数据库展现](http://static.oschina.net/uploads/space/2015/0821/224744_ldNG_868062.png)
 
+.关联查询 运行结果
+    NSArray *userArry = [DBObj getAll];
+    for (DBObj *info in userArry) {
+         
+        DBLog(@"info  %@",[info dictory]);
+         
+        for (UserInfo *obj in info.infoArry) {
+             
+            DBLog(@"obj  %@",[obj dictory]);
+        }
+    }
+    
 ![](http://static.oschina.net/uploads/space/2015/1109/100615_oJEK_868062.png)
