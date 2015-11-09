@@ -24,7 +24,7 @@ fprintf(stderr, "");                                              \
 
 
 #warning 控制台日志
-#define openDebugLog 0 //Default 1
+#define openDebugLog 1 //Default 1
 
 /**
  *  DBOBject 使用runtime + fmdb 封装
