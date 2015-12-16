@@ -171,10 +171,8 @@ fprintf(stderr, "");                                              \
         self.textView.text = [self.textView.text stringByAppendingString:string];
         double delayInSeconds = 0.1;
         
-        @weakify(self);
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-            @strongify(self);
             NSRange txtOutputRange;
             txtOutputRange.location = self.textView.text.length;
             txtOutputRange.length = 0;
