@@ -63,7 +63,7 @@ typedef void (^DB_Block_ParserForArrayVoidPlus)(NSString *field,BOOL *stop);
 
 #define SafeString(a)               ((((a)==nil)||([(a) isEqual:[NSNull null]])||((a).length==0))?@"":(a))
 
-#define SafeDBString(a)               ((((a)==nil)||([(a) isEqual:[NSNull null]])||((a).length==0))?@" ":(a))
+#define SafeDBString(a)               ((((a)==nil)||([(a) isEqual:[NSNull null]])||((a).length==0))?@"":(a))
 
 #define SafeObj(a)               (((a)==nil)||([(a) isEqual:[NSNull null]]))?@"":(a)
 
