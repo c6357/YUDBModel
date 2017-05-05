@@ -1,8 +1,5 @@
-Welcome to the YUDBFramework wiki!
-一、DBOBject 介绍
-
-感谢FMDB  
-DBOBject 使用runtime + fmdb 封装
+Welcome to the YUDBModel wiki!
+一、YUDBModel 介绍
 
 1.自动建表
 
@@ -19,8 +16,6 @@ DBOBject 使用runtime + fmdb 封装
 7.支持数据解析序列化、反序列化、json -> model  and  model ->json 
 
 8.使用FMDatabaseQueue队列操作
-
-9.只依赖唯一第三方库FMDB
 
 二、如何使用
 
