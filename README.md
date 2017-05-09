@@ -6,7 +6,7 @@ YUDBModel
 
 
 ### 一、YUDBModel 介绍
-
+* 
 
 ### 二、YUDBModel 集成
 * 手动复制YUDBModel到工程
@@ -32,8 +32,68 @@ YUDBModel
 	extern BOOL YUDBModel_ClearDBFile();
 	
 #### 反序列化 
-	///把json转换成对象	
-	DBObj *dbObj = [DBObj modelWithDictionary:json];
+
+```oc
+///把json转换成对象	
+DBObj *dbObj = [DBObj modelWithDictionary:json];
+```
+	
+```oc
+/**
+ 反序列化JSON需要替换的KEY
+ 
+ @return @{@"mode key":@"json key"}
+ */
++(NSDictionary <NSString *, NSString*> *)YUDBModel_ReplacePropertyKey;
+
+/**
+ 需要过滤在数据库表中的特殊字段 不储存的字段
+ 
+ @return  e.g. return @[@"desrc"]
+ */
++(NSArray<NSString*> *)YUDBModel_IgnoreFields;
+
+/**
+ 设置主键
+ 
+ @return 主键的 keyName
+ */
++(NSString*)YUDBModel_PrimaryKey;
+
+
+/**
+ 反序列化json自定义操作（通常用于NSArray和特殊处理）
+ 
+ @param key key值
+ @param value value值
+ @return 根据key和value返回相应的对象
+ 
+ e.g.
+ -(void)deserialize:(NSDictionary *)dictionary
+ {
+	 [super deserialize:dictionary arrayParser:^id(NSString *key,id value) {
+	 
+		 if ([key isEqualToString:@"list"]) {
+		 
+			 return [UserInfo class];
+		 }
+		 
+		 else if ([key isEqualToString:@"array"]) {
+		 
+			 return @[@"1",@"2",@"3"];//自定义数组
+		 }
+		 
+		 else if ([key isEqualToString:@"name"]) {
+		 
+		 	return @"自定义名字";
+		 }
+		 
+ 		return nil;
+ 		
+	 }];
+	 
+ }
+```
 
 
 #### 序列化
@@ -41,5 +101,7 @@ YUDBModel
 	NSDictionary * json = [dbObj dictionary];
 	
 #### 数据存储 增、删、改、查
+
+
 	
 	
