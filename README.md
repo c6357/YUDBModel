@@ -1,10 +1,14 @@
 
 YUDBModel
+<<<<<<< HEAD
 =========
+=======
+>>>>>>> origin/master
 -
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/c6357/YUDBModel)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YUDBModel.svg)](https://github.com/c6357/YUDBModel)
 
+<<<<<<< HEAD
 
 ### 一、YUDBModel 介绍
 
@@ -12,10 +16,19 @@ YUDBModel
 ### 二、YUDBModel 集成
 * 手动复制YUDBModel到工程
 * 使用Cocoapods管理
+=======
+[![GitHub stars](https://img.shields.io/badge/issues-1-1.svg?style=social&label=Star)]()
+
+
+
+一、YUDBModel 介绍
+
+>>>>>>> origin/master
 
 
 ### 三、YUDBModel 使用
 
+<<<<<<< HEAD
 #### YUDBModel配置
 	///设置数据库路径
 	extern void YUDBModel_SetupDBPath(NSString *path);
@@ -31,6 +44,8 @@ YUDBModel
 	
 	///删除数据库文件
 	extern BOOL YUDBModel_ClearDBFile();
+=======
+>>>>>>> origin/master
 
     
 #### 反序列化 
