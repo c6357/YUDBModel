@@ -1,7 +1,5 @@
 
 YUDBModel
-
-Welcome to the YUDBModel wiki!
 -
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/c6357/YUDBModel)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YUDBModel.svg)](https://github.com/c6357/YUDBModel)
