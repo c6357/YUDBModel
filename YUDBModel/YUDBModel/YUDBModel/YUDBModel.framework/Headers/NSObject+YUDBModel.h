@@ -33,33 +33,9 @@ extern void YUDBModel_SetDBLog(BOOL on);
 
 typedef id (^arrayParserWithObj)(NSString *key,id value);
 
-@protocol YUDBModelDataSource <NSObject>
+@protocol YUDBModelDelegate<NSObject>
 
 @optional
-
-/**
- 反序列化JSON需要替换的KEY
-
- @return @{@"mode key":@"json key"}
- */
-+(NSDictionary <NSString *, NSString*> *)YUDBModel_ReplacePropertyKey;
-
-/**
- 需要过滤在数据库表中的特殊字段 不储存的字段
- 
- @return  e.g. return @[@"desrc"]
- */
-+(NSArray<NSString*> *)YUDBModel_IgnoreFields;
-
-/**
- 设置主键
- 
- @return 主键的 keyName
- */
-+(NSString*)YUDBModel_PrimaryKey;
-
-
-
 
 /**
  反序列化json自定义操作（通常用于NSArray和特殊处理）
@@ -71,21 +47,21 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
  e.g.
  -(void)deserialize:(NSDictionary *)dictionary
  {
-     [super deserialize:dictionary arrayParser:^id(NSString *key,id value) {
-     
-     if ([key isEqualToString:@"list"]) {
-     
-     return [UserInfo class];
-     }
-     
-     else if ([key isEqualToString:@"array"]) {
-     
-     return @[@"1",@"2",@"3"];//自定义数组
-     }
-     
-     else if ([key isEqualToString:@"name"]) {
-     
-     return @"自定义名字";
+ [super deserialize:dictionary arrayParser:^id(NSString *key,id value) {
+ 
+ if ([key isEqualToString:@"list"]) {
+ 
+ return [UserInfo class];
+ }
+ 
+ else if ([key isEqualToString:@"array"]) {
+ 
+ return @[@"1",@"2",@"3"];//自定义数组
+ }
+ 
+ else if ([key isEqualToString:@"name"]) {
+ 
+ return @"自定义名字";
  }
  
  return nil;
@@ -108,11 +84,37 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 @end
 
+@protocol YUDBModelDataSource <NSObject>
+
+@optional
+
+/**
+ 反序列化JSON需要替换的KEY
+ 
+ @return @{@"mode key":@"json key"}
+ */
++(NSDictionary <NSString *, NSString*> *)YUDBModel_ReplacePropertyKey;
+
+/**
+ 需要过滤在数据库表中的特殊字段 不储存的字段
+ 
+ @return  e.g. return @[@"desrc"]
+ */
++(NSArray<NSString*> *)YUDBModel_IgnoreFields;
+
+/**
+ 设置主键
+ 
+ @return 主键的 keyName
+ */
++(NSString*)YUDBModel_PrimaryKey;
+
+@end
 
 
 #pragma mark -
 #pragma mark - 数据模型
-@interface NSObject(YUDBModel)<YUDBModelDataSource>
+@interface NSObject(YUDBModel)<YUDBModelDelegate,YUDBModelDataSource>
 
 /**
  初始化模型对象

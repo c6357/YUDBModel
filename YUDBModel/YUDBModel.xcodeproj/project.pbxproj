@@ -17,6 +17,7 @@
 		1830A9AB1EBC5B1E0053EF56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830A9A81EBC5B1E0053EF56 /* ViewController.m */; };
 		1830A9AE1EBC5C990053EF56 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830A9AD1EBC5C990053EF56 /* libsqlite3.0.tbd */; };
 		1830A9AF1EBC5CD60053EF56 /* YUDBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830A9A21EBC5A9F0053EF56 /* YUDBModel.framework */; };
+		183543591EC196AB0060C3D1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 183543581EC196AB0060C3D1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1830A9A71EBC5B1E0053EF56 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1830A9A81EBC5B1E0053EF56 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1830A9AD1EBC5C990053EF56 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		183543581EC196AB0060C3D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		1830A9741EBC5A0F0053EF56 = {
 			isa = PBXGroup;
 			children = (
+				183543581EC196AB0060C3D1 /* README.md */,
 				1830A97F1EBC5A0F0053EF56 /* YUDBModel */,
 				1830A97E1EBC5A0F0053EF56 /* Products */,
 				1830A9AC1EBC5C990053EF56 /* Frameworks */,
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183543591EC196AB0060C3D1 /* README.md in Sources */,
 				1830A9A91EBC5B1E0053EF56 /* AppDelegate.m in Sources */,
 				1830A9821EBC5A0F0053EF56 /* main.m in Sources */,
 				1830A99E1EBC5A6F0053EF56 /* UserInfo.m in Sources */,
@@ -352,6 +356,7 @@
 				1830A9961EBC5A0F0053EF56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
