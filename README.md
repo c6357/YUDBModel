@@ -19,5 +19,7 @@ Welcome to the YUDBModel wiki!
 
 二、如何使用
 
+YUDBModel_ClearDBFile();
+
 
 
