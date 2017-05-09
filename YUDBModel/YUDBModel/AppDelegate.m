@@ -26,7 +26,13 @@
 #pragma mark -
 #pragma mark - 使用示例
     NSDictionary *baseJson = @{
-                               @"id":@"666",
+                               @"name":@"BruceYu",
+                               @"id":@"0001",
+                               @"countF":@"1.6",
+                               @"countD":@"1.6",
+                               @"countLL":@"6",
+                               @"countUL":@"66",
+                               @"countULL":@"666",
                                @"countS":@(100),
                                @"countUS":@(99),
                                @"countB":@"1",
@@ -34,8 +40,7 @@
                                @"uinteger":@"1",
                                @"countC":@'c',
                                @"countUC":@'c',
-                               @"name":@"BruceYu",
-                               @"url":@"www/baidu.com",
+                               @"url":@"https://github.com/c6357/YUDBModel",
                                @"dict":@{
                                        @"name":@"(null)",
                                        @"phone":@"18512345678",
@@ -107,18 +112,25 @@
     NSMutableDictionary *json = [NSMutableDictionary dictionaryWithDictionary:baseJson];
     //    json[@"list"] = list;
     
-    ///自定义数据库路径
+    
+    ///设置数据库路径
+    YUDBModel_SetupDBPath([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]);
+    
+    ///设置对象归档路径
     YUDBModel_SetupDBPath(NSHomeDirectory());
     
-    ///
-    YUDBModel_SetupDBVersion(@"1.0");
+    ///设置数据库版本号
+    YUDBModel_SetupDBVersion(@"1.2");
     
     ///删除数据库文件
     YUDBModel_ClearDBFile();
     
+    ///开启打印调试日志
     YUDBModel_SetDBLog(YES);
     
     NSLog(@"dbPath: %@",NSObject.dbPath);
+    
+    NSLog(@"archivePath: %@",NSObject.archivePath);
     
     //-----------------------------------------------------------------------
     //反序列化 把json转换成对象
@@ -126,122 +138,97 @@
     DBObj *dbObj = [DBObj modelWithDictionary:json];
     
     
-    
-    //    NSLog(@"dictionary %@",[dbObj dictionary]);
-    
-    dbObj.color = [UIColor redColor];
-    dbObj.url = [NSURL URLWithString:@"www.baidu.com"];
-    dbObj.image = [UIImage imageNamed:@"img"];
-    //    dbObj.data = UIImagePNGRepresentation([UIImage imageNamed:@"img"]);
-    dbObj.name = @"bruce";
-    dbObj.integer = 100;
-    dbObj.countF = 1.6f;
-    dbObj.countD = 1.6f;
-    dbObj.countL = 100;
-    dbObj.countLL = 100;
-    dbObj.countUL = 100;
-    dbObj.countULL = 100;
-    dbObj.countC = 'c';
-    dbObj.countUC = 'c';
-    
-    
-    dbObj.number = [NSNumber numberWithFloat:1.5];
-    
-    NSLog(@"dbObj allKeys %@",[dbObj allKeys]);
-    
-    NSLog(@"dbObj allValues %@",[dbObj allValues]);
-    
-    NSLog(@"dictionary %@",[dbObj dictionary]);
-    
-    
-    [DBObj delete:[DBObj class]];
     //-----------------------------------------------------------------------
     //序列化 把对象转换成json
     //-----------------------------------------------------------------------
-    [DBObj save:dbObj];
+    NSLog(@"dictionary %@",[dbObj dictionary]);
     
     
-    
-    DBObj *obj = [DBObj queryWithkey:@"name" value:@"BruceYu"];
-    
-    obj = [[DBObj query:[DBObj class] where:@"info.infoLevel1.infoLevel2.infoLevel3.infoLevel4.name4 = 'level4'"] firstObject];
-    
-    if (nil == obj) {
-        obj = [[DBObj query:[DBObj class]] firstObject];
-    }
-    obj.integer = 100;
+    dbObj.color = [UIColor redColor];
+    dbObj.url = [NSURL URLWithString:@"https://github.com/c6357/YUDBModel"];
+    dbObj.image = [UIImage imageNamed:@"img"];
+    dbObj.number = [NSNumber numberWithFloat:1.5];
+    dbObj.data = UIImagePNGRepresentation([UIImage imageNamed:@"img"]);
     
     
-    [obj delete];
-    
-    
-    
-    [DBObj save:obj];
-    
-    NSLog(@"dictionary %@",[obj dictionary]);
-    
-    
-    [obj enumerateObjectsKeysAndValues:^(NSString *key, id value, BOOL *stop) {
-        
-        NSLog(@"%@ = %@",key,value);
-    }];
-    
-    obj.name = @"hello";
-    [obj update];
-    NSLog(@"obj %@",[obj dictionary]);
-    
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.window.frame];
-    imageView.image = [UIImage imageWithData:obj.data];
-    [self.window insertSubview:imageView atIndex:1];
     
     //-----------------------------------------------------------------------
     //数据存储 增、删、改、查
     //-----------------------------------------------------------------------
     [NSObject insert:dbObj];
     [NSObject insertObjs:@[dbObj]];
-    [NSObject update:dbObj where:@"name = 'BruceYu'"];
+    
     [NSObject save:dbObj];
     [NSObject save:dbObj withKey:@"name"];
     [NSObject save:dbObj withKeys:@[@"name"]];
-    
-    
     [NSObject saveObjs:@[dbObj]];
     
-    [NSObject delete:[dbObj class]];
     
+    dbObj.countC = 'f';
+    [NSObject update:dbObj where:@"name = 'BruceYu'"];
+    
+    
+    [NSObject delete:[dbObj class]];
     [NSObject delete:dbObj WithKey:@"name"];
     
-    NSArray * arry =  [NSObject query];
+    
+    
+    
+    [NSObject insert:dbObj];
+    [NSObject insert:dbObj];
+    NSArray * arry =  [DBObj query];
     NSLog(@"arry %@",arry);
+    
+    
+    
+    
+    DBObj *obj = [DBObj queryWithkey:@"name" value:@"BruceYu"];
+    obj = [[DBObj query:[DBObj class] where:@"info.infoLevel1.infoLevel2.infoLevel3.infoLevel4.name4 = 'level4'"] firstObject];
+    
+    if (nil == obj) {
+        obj = [[DBObj query:[DBObj class]] firstObject];
+    }
+    obj.integer = 100;
+    obj.name = @"hello";
+    [obj update];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.window.frame];
+    imageView.image = [UIImage imageWithData:obj.data];
+    [self.window insertSubview:imageView atIndex:0];
+    
+    
+    
+    
+#pragma 对象属性枚举
+    NSLog(@"dbObj allKeys %@",[dbObj allKeys]);
+    
+    NSLog(@"dbObj allValues %@",[dbObj allValues]);
+    
+    [obj enumerateObjectsKeysAndValues:^(NSString *key, id value, BOOL *stop) {
+        NSLog(@"%@ = %@",key,value);
+        
+    }];
+    
+    
     
     
     UserInfo *user = [UserInfo newModel];
     user.name = @"BruceYu";
     user.email = @"c6357@outlook.com";
     [UserInfo save:user];
+    
     NSLog(@"user %@",[user dictionary]);
     
-    DBObj *objModel = [DBObj newModel];
-    NSLog(@"objModel %@",[objModel dictionary]);
-    
-    [DBObj save:obj];
-    
-    
-    //归档 NSCoding
-    NSString *path=[NSString stringWithFormat:@"%@/archive.archive",NSHomeDirectory()];
-    [NSKeyedArchiver archiveRootObject:dbObj toFile:path];
-    
-    
-    [NSKeyedArchiver archiveRootObject:user toFile:path];
-    
-    
-    path=[NSString stringWithFormat:@"%@/archive1",NSHomeDirectory()];
-    [NSKeyedArchiver archiveRootObject:user toFile:path];
+    //归档
+    static NSString *const archiveName = @"DBObj.archive";
+    BOOL result = NO;
+    if ((result = [NSObject archiveObject:dbObj toName:archiveName])) {
+        NSLog(@"归档成功：%@",NSObject.archivePath);
+    }
     
     // 解档
-    DBObj *person=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    NSLog(@"归档－－－%@\n解档－－－%@",path,(DBObj*)person.name);
+    DBObj *person = [NSObject unarchiveObjectWithName:archiveName];
+    NSLog(@"解档 DBObj－－－%@",(DBObj*)person.name);
 }
 
 @end

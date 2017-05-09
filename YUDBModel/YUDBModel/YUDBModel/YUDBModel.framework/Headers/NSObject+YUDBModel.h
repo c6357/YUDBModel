@@ -21,6 +21,9 @@ extern BOOL YUDBModel_ClearDBFile();
 ///设置数据库路径
 extern void YUDBModel_SetupDBPath(NSString *path);
 
+///设置对象归档路径
+extern void YUDBModel_SetupObjectPath(NSString *path);
+
 ///设置数据库版本号
 extern void YUDBModel_SetupDBVersion(NSString *version);
 
@@ -28,7 +31,10 @@ extern void YUDBModel_SetupDBVersion(NSString *version);
 extern void YUDBModel_SetDBLog(BOOL on);
 
 
+typedef id (^arrayParserWithObj)(NSString *key,id value);
+
 @protocol YUDBModelDataSource <NSObject>
+
 @optional
 
 /**
@@ -36,7 +42,7 @@ extern void YUDBModel_SetDBLog(BOOL on);
 
  @return @{@"mode key":@"json key"}
  */
-+(NSDictionary<NSString *, NSString*>*)YUDBModel_ReplacePropertyKey;
++(NSDictionary <NSString *, NSString*> *)YUDBModel_ReplacePropertyKey;
 
 /**
  需要过滤在数据库表中的特殊字段 不储存的字段
@@ -51,6 +57,54 @@ extern void YUDBModel_SetDBLog(BOOL on);
  @return 主键的 keyName
  */
 +(NSString*)YUDBModel_PrimaryKey;
+
+
+
+
+/**
+ 反序列化json自定义操作（通常用于NSArray和特殊处理）
+ 
+ @param key key值
+ @param value value值
+ @return 根据key和value返回相应的对象
+ 
+ e.g.
+ -(void)deserialize:(NSDictionary *)dictionary
+ {
+     [super deserialize:dictionary arrayParser:^id(NSString *key,id value) {
+     
+     if ([key isEqualToString:@"list"]) {
+     
+     return [UserInfo class];
+     }
+     
+     else if ([key isEqualToString:@"array"]) {
+     
+     return @[@"1",@"2",@"3"];//自定义数组
+     }
+     
+     else if ([key isEqualToString:@"name"]) {
+     
+     return @"自定义名字";
+ }
+ 
+ return nil;
+ }];
+ }
+ 详情见：https://github.com/c6357/YUDBModel
+ */
+
+/**
+ 反序列化 把json转换成NSObject对象
+ 
+ @param dictionary dictionary
+ */
+
+-(void)deserialize:(NSDictionary*)dictionary;
+
+
+-(void)deserialize:(NSDictionary*)dictionary
+       arrayParser:(arrayParserWithObj)arrayParser;
 
 @end
 
@@ -76,7 +130,6 @@ extern void YUDBModel_SetDBLog(BOOL on);
  */
 - (instancetype)initModelWithDictionary:(NSDictionary *)dictionary;
 
-
 /**
  初始化一个NSObject对象 优化[NSObject new]
  初始化成员👉再也不用担心APP界面上有null
@@ -85,11 +138,19 @@ extern void YUDBModel_SetDBLog(BOOL on);
  */
 + (instancetype)newModel;
 
+
+/**
+ 序列化 把NSObject对象转换成json
+ 
+ @return dictionary
+ */
+-(NSDictionary *)dictionary;
+
 #pragma mark -
 #pragma mark - 数据存储
 
 /**
- 更新当前对象在数据库的数据
+ 更新当前对象在数据库的数据(rowid关联的对象)
  
   @return 更新结果
  */
@@ -104,7 +165,7 @@ extern void YUDBModel_SetDBLog(BOOL on);
 - (BOOL)save:(NSString*)key;
 
 /**
- 删除当前对象数据在数据库的数据
+ 删除当前对象数据在数据库的数据(rowid关联的对象)
 
  @return 删除结果
  */
@@ -369,6 +430,40 @@ extern void YUDBModel_SetDBLog(BOOL on);
  @return 执行结果
  */
 + (BOOL)executeUpdateWithSql:(NSString *)sql;
+
+
+
+
+
+#pragma mark - 存档
+/**
+ 存档路劲
+
+ @return 存档路劲
+ */
+- (NSString*)archivePath;
+
+/**
+ 存档
+
+ @param object 需要存档的对象
+ @param name 唯一文件名
+ @return 存档结果
+ */
++ (BOOL)archiveObject:(id)object toName:(NSString *)name;
+
+
+#pragma mark - 解档
+
+/**
+ 解档
+
+ @param name 唯一文件名
+ @return 解档对象
+ */
++ (id)unarchiveObjectWithName:(NSString *)name;
+
+
 
 @end
 

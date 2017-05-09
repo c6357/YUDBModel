@@ -27,5 +27,4 @@ FOUNDATION_EXPORT const unsigned char YUDBModelVersionString[];
 
 
 #import <YUDBModel/NSObject+YUPropert.h>
-#import <YUDBModel/NSObject+YUModel.h>
 #import <YUDBModel/NSObject+YUDBModel.h>
