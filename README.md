@@ -102,6 +102,225 @@ DBObj *dbObj = [DBObj modelWithDictionary:json];
 	
 #### 数据存储 增、删、改、查
 
+* 增 改
 
+```oc
+///直接插入一条数据
+[NSObject insert:dbObj];
 	
+///直接插入多条数据
+[NSObject insertObjs:@[dbObj]];
+
+///保存一条数据（根据rowid查找 if数据存在更新else插入）
+[NSObject save:dbObj];
+
+///保存多条数据（根据rowid查找 if数据存在更新else插入）
+[NSObject saveObjs:@[dbObj]];
+
+///保存一条数据（根据key值条件查找 if数据存在更新else插入）
+[NSObject save:dbObj withKey:@"name"];
+
+///保存一条数据（根据多个key值条件查找 if数据存在更新else插入）
+[NSObject save:dbObj withKeys:@[@"name"]];
+
+///更新一条数据（只执行更新语句）
+[NSObject update:dbObj where:@"name = 'BruceYu'"];
+
+```
+
+* 删
+
+```oc
+///删除表dbObj [obj Class]
+[NSObject delete:[dbObj class]];
+
+///根据条件key删除表[object class]数据
+[NSObject delete:dbObj WithKey:@"name"];
+
+///根据多个条件key删除表[object class]数据
+[NSObject delete:dbObj withKeys:@[@"name"]];
+
+///根据条件删除表[obj Class]数据
+[NSObject delete:dbObj where:@"name = 'BruceYu' "];
+    
+```
 	
+* 查
+
+```
+///举个栗子
+DBObj *obj = [DBObj queryWithkey:@"name" value:@"BruceYu"];
+
+if (nil == obj) {
+	obj = [[DBObj query:[DBObj class]where:@"info.infoLevel1.infoLevel2.infoLevel3.infoLevel4.name4 = 'level4'"] firstObject];
+}
+
+if (nil == obj) {
+    obj = [[DBObj query:[DBObj class]] firstObject];
+}
+
+obj.integer = 100;
+obj.name = @"hello";
+[obj update];
+
+```
+
+```oc
+#pragma mark - 简单查询
+/**
+ 查询表[self class]所有数据
+
+ @return array
+ */
++ (NSArray *)query;
+
+/**
+  查询表[obj Class]所有数据
+
+ @param objClass 数据模型
+ @return array
+ */
++ (NSArray *)query:(Class)objClass;
+
+/**
+  查询表[self class]数据
+
+ @param key 查询条件键key
+ @param value 查询条件键valus
+ @return 符合条件的第一条数据
+ */
++ (id)queryWithkey:(NSString*)key value:(NSString*)value;
+
+/**
+   查询表[self class]数据
+
+ @param key 查询条件键key
+ @param value 查询条件键valus
+ @return array
+ */
++ (NSArray *)query:(NSString*)key value:(NSString*)value;
+
+/**
+    查询表[self class]数据
+
+ @param keyValues 查询条件键的{key:valus}
+ @return array
+ */
++ (NSArray *)queryWithkeyValues:(NSDictionary*)keyValues;
+
+
+#pragma mark - 高级查询
+
+/**
+ 查询表[obj Class]数据
+
+ @param objClass 数据模型
+ @param where where条件
+ @return array
+ */
++ (NSArray *)query:(Class)objClass where:(NSString *)where;
+
+
+/**
+  查询表[obj Class]数据
+
+ @param objClass 数据模型
+ @param order order by 条件
+ @return array
+ */
++ (NSArray *)query:(Class)objClass order:(NSString *)order;
+
+
+/**
+  查询表[obj Class]数据
+
+ @param objClass 数据模型
+ @param limit LIMIT 语句
+ @return array
+ */
++ (NSArray *)query:(Class)objClass limit:(NSString *)limit;
+
+
+/**
+ 查询表[obj Class]数据
+ 
+ @param objClass 数据模型
+ @param where where条件
+ @param order order by
+ @return array
+ */
++ (NSArray *)query:(Class)objClass where:(NSString *)where order:(NSString *)order;
+
+/**
+ 查询表[obj Class]数据
+ 
+ @param objClass 数据模型
+ @param where where条件
+ @param limit limit
+ @return array
+ */
++ (NSArray *)query:(Class)objClass where:(NSString *)where limit:(NSString *)limit;
+
+
+/**
+ 查询表[obj Class]数据
+ 
+ @param objClass 数据模型
+ @param order order by
+ @param limit limit
+ @return array
+ */
++ (NSArray *)query:(Class)objClass order:(NSString *)order limit:(NSString *)limit;
+
+
+/**
+ 查询表[obj Class]数据
+
+ @param objClass 数据模型
+ @param where where条件
+ @param order order by
+ @param limit limit
+ @return array
+ */
++ (NSArray *)query:(Class)objClass where:(NSString *)where order:(NSString *)order limit:(NSString *)limit;
+
+
+#pragma mark - 自助高级查询
+/**
+  查询数据
+ @param objClass 需要反序列化的数据模型objClass
+ @param sql 纯sql语句
+ @return array @[objClass,objClass,objClass.....]
+ */
++ (NSArray *)query:(Class)objClass sql:(NSString *)sql;
+
+
+/**
+ 执行一条sql更新语句
+
+ @param sql 纯sql语句
+ @return 执行结果
+ */
++ (BOOL)executeUpdateWithSql:(NSString *)sql;
+    
+```
+	
+* 归档
+
+```oc
+ ///存档一个对象
+static NSString *const archiveName = @"DBObj.archive";
+BOOL result = NO;
+if ((result = [NSObject archiveObject:dbObj toName:archiveName])) {
+    NSLog(@"归档成功：%@",NSObject.archivePath);
+}
+   
+```
+
+* 解档
+
+```oc
+/// 解档一个对象
+DBObj *obj = [NSObject unarchiveObjectWithName:archiveName];
+NSLog(@"解档 DBObj－－－%@",(DBObj*)obj.name);
+```
