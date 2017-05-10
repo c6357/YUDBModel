@@ -3,7 +3,7 @@ YUDBModel
 -
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/c6357/YUDBModel)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YUDBModel.svg)](https://github.com/c6357/YUDBModel)
-
+[![Travis branch](https://img.shields.io/badge/YUDBModel-绿色插件-brightgreen.svg)](https://github.com/c6357/YUDBModel)
 
 ### 一、YUDBModel 介绍
 * 
@@ -32,6 +32,150 @@ YUDBModel
 	extern BOOL YUDBModel_ClearDBFile();
 	
 #### 反序列化 
+
+* DBObj class
+
+
+```
+struct User {
+    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *email;
+    int age;
+};
+
+@interface BASEDBObj : NSObject
+@end
+
+@interface DBObj : BASEDBObj
+
+@property (copy, nonatomic, readonly) NSNumber *objId;
+
+@property (nonatomic, assign, readonly)Point *point;
+@property (nonatomic, assign, readonly)struct User *user;
+@property (nonatomic, assign, readonly)Method method;
+@property (nonatomic, assign, readonly)Ivar ivar;
+@property (nonatomic, assign, readonly)Category category;
+@property (nonatomic, assign, readonly)objc_property_t property;
+
+@property (copy, nonatomic, readonly) void(^Block)(void);
+@property (copy, nonatomic, readwrite) id obj;
+@property (copy, nonatomic, readwrite) Class classz;
+@property (assign, nonatomic, readwrite) SEL sel;
+
+
+@property (copy, nonatomic, readwrite) NSString *name;
+@property (copy, nonatomic, readonly) UserInfo *info;
+@property (copy, nonatomic, readonly) NSArray *list;
+
+@property (copy, nonatomic, readwrite) NSArray *array;
+@property (copy, nonatomic, readwrite) NSDictionary *dict;
+@property (copy, nonatomic, readwrite) NSData *data;
+@property (copy, nonatomic, readwrite) NSDate *date;
+@property (copy, nonatomic, readwrite) NSURL *url;
+@property (copy, nonatomic, readwrite) NSNumber *number;
+@property (copy, nonatomic, readwrite) NSValue *value;
+
+
+@property (copy, nonatomic, readwrite) UIImage *image;
+@property (copy, nonatomic, readwrite) UIColor *color;
+
+
+@property (assign, nonatomic, readwrite) char countC;
+@property (assign, nonatomic, readwrite) unsigned char countUC;
+@property (assign, nonatomic, readwrite) short countS;
+@property (assign, nonatomic, readwrite) unsigned short countUS;
+@property (assign, nonatomic, readwrite) int countI;
+@property (assign, nonatomic, readwrite) unsigned int countUI;
+@property (assign, nonatomic, readwrite) long countL;
+@property (assign, nonatomic, readwrite) unsigned long countUL;
+@property (assign, nonatomic, readwrite) long long countLL;
+@property (assign, nonatomic, readwrite) unsigned long long countULL;
+@property (assign, nonatomic, readwrite) float countF;
+@property (assign, nonatomic, readwrite) double countD;
+@property (assign, nonatomic, readwrite) BOOL countB;
+@property (assign, nonatomic, readwrite) NSInteger integer;
+@property (assign, nonatomic, readwrite) NSUInteger uinteger;
+
+@end
+```
+
+* json
+
+```
+@{
+    @"name":@"BruceYu",
+    @"id":@"0001",
+    @"countF":@"1.6",
+    @"countD":@"1.6",
+    @"countLL":@"6",
+    @"countUL":@"66",
+    @"countULL":@"666",
+    @"countS":@(100),
+    @"countUS":@(99),
+    @"countB":@"1",
+    @"integer":@"1",
+    @"uinteger":@"1",
+    @"countC":@'c',
+    @"countUC":@'c',
+    @"url":@"https://github.com/c6357/YUDBModel",
+    @"dict":@{
+            @"name":@"(null)",
+            @"phone":@"18512345678",
+            @"age":@(66),
+            @"sex":@(1),
+            },
+
+    
+    @"info":@{
+           @"name":@"bruce",
+           @"phone":@"(null)",
+           @"age":@(66),
+           @"sex":@(1),
+           @"infoLevel1" :         @{
+               @"infoLevel2" :             @{
+                   @"infoLevel3" :                 @{
+                       @"infoLevel4" :                     @{
+                           @"infoLevel5" :                         @{
+                               @"infoLevel6" :                             @{
+                                   @"name6" : @"level6",
+                               },
+                               @"name5" : @"level5",
+                           },
+                           @"name4" : @"level4",
+                       },
+                       @"name3" : @"level3",
+                   },
+                   @"name2" : @"level2",
+               },
+               @"name1" : @"level1",
+               @"phone1" : @"phone1",
+               },
+           },
+    
+    @"list":@[
+                @{
+                    @"name":@"name1",
+                    @"phone":@"18500000001",
+                    @"age":@(11),
+                    @"sex":@(2),
+               },
+                @{
+                    @"name":@"(null)",
+                    @"phone":@"18500000002",
+                    @"age":@(22),
+                    @"sex":@(2),
+                    },
+                
+                @{
+                    @"name":@"name3",
+                    @"phone":@"18500000003",
+                    @"age":@(33),
+                    @"sex":@(3),
+                    },
+           ],
+    };
+```
+
 
 ```oc
 ///把json转换成对象	
@@ -324,3 +468,5 @@ if ((result = [NSObject archiveObject:dbObj toName:archiveName])) {
 DBObj *obj = [NSObject unarchiveObjectWithName:archiveName];
 NSLog(@"解档 DBObj－－－%@",(DBObj*)obj.name);
 ```
+
+* 更多请查阅API
