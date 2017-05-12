@@ -1,6 +1,6 @@
 YUDBModel
 =========
-(直接实现json反序列化对象-对象增删改查数据库-对象序列化)
+(直接实现json反序列化对象-对象增删改查数据库-对象序列化的插件)
 -
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/c6357/YUDBModel)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YUDBModel.svg)](https://github.com/c6357/YUDBModel)
