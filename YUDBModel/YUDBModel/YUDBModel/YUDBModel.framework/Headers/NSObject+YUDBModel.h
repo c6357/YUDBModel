@@ -15,23 +15,24 @@
 
 #import <Foundation/Foundation.h>
 
-///删除数据库文件
-extern BOOL YUDBModel_ClearDBFile();
-
-///设置数据库路径
+///设置数据库路径 非必须/默认Library/Caches
 extern void YUDBModel_SetupDBPath(NSString *path);
 
-///设置对象归档路径
+///设置对象归档路径  非必须/默认Library/Caches
 extern void YUDBModel_SetupObjectPath(NSString *path);
 
-///设置数据库版本号
+///设置数据库版本号 非必须/默认1.0
 extern void YUDBModel_SetupDBVersion(NSString *version);
 
-///打开日志输出
+///打开日志输出 /默认false
 extern void YUDBModel_SetDBLog(BOOL on);
+
+///删除数据库文件 /谨慎使用
+extern BOOL YUDBModel_ClearDBFile();
 
 
 typedef id (^arrayParserWithObj)(NSString *key,id value);
+
 
 @protocol YUDBModelDelegate<NSObject>
 
@@ -84,6 +85,8 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 @end
 
+
+
 @protocol YUDBModelDataSource <NSObject>
 
 @optional
@@ -103,7 +106,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 +(NSArray<NSString*> *)YUDBModel_IgnoreFields;
 
 /**
- 设置主键
+ 设置主键 默认 id
  
  @return 主键的 keyName
  */
@@ -198,7 +201,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 #pragma mark -增 改
 /**
- 直接插入数据
+ 直接插入一条数据
  */
 
 + (BOOL)insert:(NSObject*)object;
@@ -215,7 +218,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (BOOL)update:(NSObject*)object where:(NSString *)where;
 
 /**
- 保存一条数据（if数据存在更新else插入 仅限于YUDBModel对象）
+ 保存一条数据（根据rowid查找 if数据存在更新else插入）
 
  @param object 数据模型对象
  @return 操作结果
@@ -224,7 +227,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 
 /**
-  保存多条数据（if数据存在更新else插入 仅限于YUDBModel对象）
+  保存多条数据（根据rowid查找 if数据存在更新else插入）
 
  @param objects 数据模型对象
  @return 操作结果
@@ -232,7 +235,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (BOOL)saveObjs:(NSArray *)objects;
 
 /**
-  保存一条数据（if数据存在更新else插入）
+  保存一条数据（根据key值条件查找 if数据存在更新else插入）
 
  @param object 数据模型对象
  @param key （以object对象的某个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
@@ -241,7 +244,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (BOOL)save:(NSObject*)object withKey:(NSString*)key;
 
 /**
- 保存一条数据（if数据存在更新else插入）
+ 保存一条数据（根据多个key值条件查找 if数据存在更新else插入）
  
  @param object 数据模型对象
  @param keys （以object对象的多个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
@@ -269,7 +272,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (BOOL)delete:(Class)objClass;
 
 /**
- 根据条件删除表[object class]数据
+ 根据条件key删除表[object class]数据
 
  @param object 数据模型对象
  @param key （以object对象的某个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
@@ -278,7 +281,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (BOOL)delete:(NSObject*)object WithKey:(NSString *)key;
 
 /**
- 根据条件删除表[object class]数据
+ 根据多个条件key删除表[object class]数据
  
  @param object 数据模型对象
  @param keys （以object对象的多个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
@@ -446,7 +449,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 - (NSString*)archivePath;
 
 /**
- 存档
+ 存档一个对象
 
  @param object 需要存档的对象
  @param name 唯一文件名
@@ -458,7 +461,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 #pragma mark - 解档
 
 /**
- 解档
+ 解档一个对象
 
  @param name 唯一文件名
  @return 解档对象

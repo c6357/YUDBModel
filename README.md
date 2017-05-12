@@ -1,15 +1,23 @@
 YUDBModel
 =========
+(直接实现json反序列化对象-对象增删改查数据库-对象序列化)
 -
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/c6357/YUDBModel)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YUDBModel.svg)](https://github.com/c6357/YUDBModel)
 [![Travis branch](https://img.shields.io/badge/YUDBModel-绿色插件-brightgreen.svg)](https://github.com/c6357/YUDBModel)
 
 ### 一、YUDBModel 介绍
-* 
+- **架构**: 使用runtime和Sqlite实现NSObject扩展类YUDBModel,直接实现(json反序列化对象-对象增删改查数据库-对象序列化)
+- **易用**: 无需继承，直接实现序列化、反序列化、一行代码操作数据库
+- **稳定**: 耦合度低，容错率高，兼容复杂和特殊数据类型
+- **支持**: (NSObject,NSArray,NSDictionary,NSData,NSString,NSNumber,NSURL,Int,double,long,float,Bool,char)类型
+- **灵活**: 支持反序列化json key替换，支持自设定主键，支持忽略模型存储字段，支持反序列化代理之定义数据(deserialize())，支持使用Sqlite函数进行查询.
+- **强大**: 支持json反序列化对象-对象增删改查数据库-对象序列化，支持模型嵌套存储和多表嵌套复杂查询
+- **智能**: 自动增删改表字段，自动初始化空对象(NSObject,NSArray,NSDictionary,NSString)
 
 ### 二、YUDBModel 集成
-* 手动复制YUDBModel到工程
+* 手动复制《YUDBModel.framework》到工程
+
 * 使用Cocoapods管理
 
 
@@ -34,7 +42,6 @@ YUDBModel
 #### 反序列化 
 
 * DBObj class
-
 
 ```
 struct User {
