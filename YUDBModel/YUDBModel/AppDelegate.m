@@ -173,8 +173,6 @@
     [NSObject delete:dbObj WithKey:@"name"];
     
     
-    
-    
     [NSObject insert:dbObj];
     [NSObject insert:dbObj];
     NSArray * arry =  [DBObj query];
@@ -195,11 +193,9 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.window.frame];
     imageView.image = [UIImage imageWithData:obj.data];
-    [self.window insertSubview:imageView atIndex:0];
-    
-    
-    
-    
+    self.window.hidden = NO;
+    [self.window addSubview:imageView];
+
 #pragma 对象属性枚举
     NSLog(@"dbObj allKeys %@",[dbObj allKeys]);
     
