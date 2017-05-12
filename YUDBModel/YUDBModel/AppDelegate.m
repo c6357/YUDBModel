@@ -193,7 +193,7 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.window.frame];
     imageView.image = [UIImage imageWithData:obj.data];
-//    self.window.hidden = NO;
+    self.window.hidden = NO;
     [self.window addSubview:imageView];
 
 #pragma 对象属性枚举
