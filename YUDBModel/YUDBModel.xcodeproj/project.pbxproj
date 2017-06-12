@@ -16,7 +16,7 @@
 		1830A9AB1EBC5B1E0053EF56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830A9A81EBC5B1E0053EF56 /* ViewController.m */; };
 		1830A9AE1EBC5C990053EF56 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830A9AD1EBC5C990053EF56 /* libsqlite3.0.tbd */; };
 		183543591EC196AB0060C3D1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 183543581EC196AB0060C3D1 /* README.md */; };
-		183AB1251EEE3C8C005E17E7 /* YUDBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AB1241EEE3C8C005E17E7 /* YUDBModel.framework */; };
+		183AB2301EEE7091005E17E7 /* YUDBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AB22F1EEE7091005E17E7 /* YUDBModel.framework */; };
 		18D234F91EC5651000448B74 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D234F81EC5651000448B74 /* img.png */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		1830A9A81EBC5B1E0053EF56 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1830A9AD1EBC5C990053EF56 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		183543581EC196AB0060C3D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		183AB1241EEE3C8C005E17E7 /* YUDBModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YUDBModel.framework; sourceTree = "<group>"; };
+		183AB22F1EEE7091005E17E7 /* YUDBModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YUDBModel.framework; path = ../YUDBModel.framework; sourceTree = "<group>"; };
 		18D234F81EC5651000448B74 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183AB1251EEE3C8C005E17E7 /* YUDBModel.framework in Frameworks */,
+				183AB2301EEE7091005E17E7 /* YUDBModel.framework in Frameworks */,
 				1830A9AE1EBC5C990053EF56 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +56,7 @@
 		1830A9741EBC5A0F0053EF56 = {
 			isa = PBXGroup;
 			children = (
-				183AB1241EEE3C8C005E17E7 /* YUDBModel.framework */,
+				183AB22F1EEE7091005E17E7 /* YUDBModel.framework */,
 				183543581EC196AB0060C3D1 /* README.md */,
 				1830A97F1EBC5A0F0053EF56 /* YUDBModel */,
 				1830A97E1EBC5A0F0053EF56 /* Products */,
