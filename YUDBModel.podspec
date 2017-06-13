@@ -8,9 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "BruceYu" => "c6357@outlook.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/c6357/YUDBModel.git", :tag => s.version}
-  #s.source_files  = "YUDBModel", "YUDBModel/**/*.{h,m}"
   s.ios.vendored_frameworks = 'YUDBModel.framework'
   s.library = 'sqlite3'
   s.requires_arc = true
-
 end
