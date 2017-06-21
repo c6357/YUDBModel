@@ -38,7 +38,7 @@
 
 /**
  遍历类的属性名
-
+ 
  @param block block description
  */
 + (void)enumerateObjectsKeys:(void (NS_NOESCAPE ^)(NSString *key,BOOL *stop))block;
@@ -46,7 +46,7 @@
 
 /**
  遍历对象的属性名和属性值
-
+ 
  @param block block description
  */
 - (void)enumerateObjectsKeysAndValues:(void (NS_NOESCAPE ^)(NSString *key,id value,BOOL *stop))block;

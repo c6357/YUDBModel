@@ -157,13 +157,13 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 /**
  更新当前对象在数据库的数据(rowid关联的对象)
  
-  @return 更新结果
+ @return 更新结果
  */
 - (BOOL)update;
 
 /**
  储存当前对象到数据库
-
+ 
  @param key 对象的keyName
  @return 储存结果
  */
@@ -171,7 +171,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  删除当前对象数据在数据库的数据(rowid关联的对象)
-
+ 
  @return 删除结果
  */
 - (BOOL)delete;
@@ -183,7 +183,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  数据库路径
-
+ 
  @return 路径
  */
 +(NSString *)dbPath;
@@ -191,7 +191,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  数据库版本
-
+ 
  @return 版本号
  */
 +(NSString *)dbVersion;
@@ -219,7 +219,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  保存一条数据（根据rowid查找 if数据存在更新else插入）
-
+ 
  @param object 数据模型对象
  @return 操作结果
  */
@@ -227,16 +227,16 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 
 /**
-  保存多条数据（根据rowid查找 if数据存在更新else插入）
-
+ 保存多条数据（根据rowid查找 if数据存在更新else插入）
+ 
  @param objects 数据模型对象
  @return 操作结果
  */
 + (BOOL)saveObjs:(NSArray *)objects;
 
 /**
-  保存一条数据（根据key值条件查找 if数据存在更新else插入）
-
+ 保存一条数据（根据key值条件查找 if数据存在更新else插入）
+ 
  @param object 数据模型对象
  @param key （以object对象的某个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
  @return 操作结果
@@ -257,7 +257,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  删除默认数据文件
-
+ 
  @return 操作结果
  */
 + (BOOL)clearDB;
@@ -265,7 +265,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  删除表[obj Class]
-
+ 
  @param objClass 数据模型
  @return 操作结果
  */
@@ -273,7 +273,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  根据条件key删除表[object class]数据
-
+ 
  @param object 数据模型对象
  @param key （以object对象的某个属性和属性值作为WHERE查询条件，该key的value值必须为唯一值）
  @return 操作结果
@@ -302,22 +302,22 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 #pragma mark - 简单查询
 /**
  查询表[self class]所有数据
-
+ 
  @return array
  */
 + (NSArray *)query;
 
 /**
-  查询表[obj Class]所有数据
-
+ 查询表[obj Class]所有数据
+ 
  @param objClass 数据模型
  @return array
  */
 + (NSArray *)query:(Class)objClass;
 
 /**
-  查询表[self class]数据
-
+ 查询表[self class]数据
+ 
  @param key 查询条件键key
  @param value 查询条件键valus
  @return 符合条件的第一条数据
@@ -325,8 +325,8 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (id)queryWithkey:(NSString*)key value:(NSString*)value;
 
 /**
-   查询表[self class]数据
-
+ 查询表[self class]数据
+ 
  @param key 查询条件键key
  @param value 查询条件键valus
  @return array
@@ -334,8 +334,8 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 + (NSArray *)query:(NSString*)key value:(NSString*)value;
 
 /**
-    查询表[self class]数据
-
+ 查询表[self class]数据
+ 
  @param keyValues 查询条件键的{key:valus}
  @return array
  */
@@ -346,7 +346,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  查询表[obj Class]数据
-
+ 
  @param objClass 数据模型
  @param where where条件
  @return array
@@ -355,8 +355,8 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 
 /**
-  查询表[obj Class]数据
-
+ 查询表[obj Class]数据
+ 
  @param objClass 数据模型
  @param order order by 条件
  @return array
@@ -365,8 +365,8 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 
 /**
-  查询表[obj Class]数据
-
+ 查询表[obj Class]数据
+ 
  @param objClass 数据模型
  @param limit LIMIT 语句
  @return array
@@ -408,7 +408,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  查询表[obj Class]数据
-
+ 
  @param objClass 数据模型
  @param where where条件
  @param order order by
@@ -420,7 +420,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 #pragma mark - 自助高级查询
 /**
-  查询数据
+ 查询数据
  @param objClass 需要反序列化的数据模型objClass
  @param sql 纯sql语句
  @return array @[objClass,objClass,objClass.....]
@@ -430,7 +430,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  执行一条sql更新语句
-
+ 
  @param sql 纯sql语句
  @return 执行结果
  */
@@ -443,14 +443,14 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 #pragma mark - 存档
 /**
  存档路劲
-
+ 
  @return 存档路劲
  */
 - (NSString*)archivePath;
 
 /**
  存档一个对象
-
+ 
  @param object 需要存档的对象
  @param name 唯一文件名
  @return 存档结果
@@ -462,7 +462,7 @@ typedef id (^arrayParserWithObj)(NSString *key,id value);
 
 /**
  解档一个对象
-
+ 
  @param name 唯一文件名
  @return 解档对象
  */
