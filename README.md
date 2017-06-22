@@ -24,6 +24,10 @@ YUDBModel
 ### 三、YUDBModel 使用
 
 #### YUDBModel配置
+
+    ///根据json数据懒人输出对象属性
+    extern void YUDBModel_OutputProperty(NSDictionary* json);
+
 	///设置数据库路径
 	extern void YUDBModel_SetupDBPath(NSString *path);
 	
@@ -39,11 +43,56 @@ YUDBModel
 	///删除数据库文件
 	extern BOOL YUDBModel_ClearDBFile();
 	
+	
+#### 根据json生成对象属性
+```oc
+YUDBModel_OutputProperty(baseJson);
+```
+
+```oc
+///
+@property (copy, nonatomic, readwrite)NSNumber *id;
+///
+@property (copy, nonatomic, readwrite)NSNumber *countUL;
+///
+@property (copy, nonatomic, readwrite)NSNumber *integer;
+///
+@property (copy, nonatomic, readwrite)NSString *countUS;
+///
+@property (copy, nonatomic, readwrite)NSNumber *countULL;
+///
+@property (copy, nonatomic, readwrite)NSNumber *countB;
+///
+@property (copy, nonatomic, readwrite)NSString *countS;
+///
+@property (copy, nonatomic, readwrite)NSNumber *uinteger;
+///
+@property (copy, nonatomic, readwrite)NSString *countC;
+///
+@property (copy, nonatomic, readwrite)NSString *countUC;
+///
+@property (copy, nonatomic, readwrite)NSString *url;
+///
+@property (copy, nonatomic, readwrite)NSDictionary *dict;
+///
+@property (copy, nonatomic, readwrite)NSString *countF;
+///
+@property (copy, nonatomic, readwrite)NSArray *list;
+///
+@property (copy, nonatomic, readwrite)NSDictionary *info;
+///
+@property (copy, nonatomic, readwrite)NSString *countD;
+///
+@property (copy, nonatomic, readwrite)NSString *name;
+///
+@property (copy, nonatomic, readwrite)NSNumber *countLL;
+```
+	
 #### 反序列化 
 
 * DBObj class
 
-```
+```	
 struct User {
     __unsafe_unretained NSString *name;
     __unsafe_unretained NSString *email;

@@ -114,6 +114,9 @@
     //    json[@"list"] = list;
     
     
+    ///根据json生成对象属性
+    YUDBModel_OutputProperty(baseJson);
+    
     ///设置数据库路径
     YUDBModel_SetupDBPath([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]);
     
