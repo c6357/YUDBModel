@@ -51,41 +51,41 @@ YUDBModel_OutputProperty(baseJson);
 
 ```oc
 ///
-@property (copy, nonatomic, readwrite)NSNumber *id;
+@property (copy, nonatomic, readonly)NSNumber *id;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *countUL;
+@property (copy, nonatomic, readonly)NSNumber *countUL;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *integer;
+@property (copy, nonatomic, readonly)NSNumber *integer;
 ///
-@property (copy, nonatomic, readwrite)NSString *countUS;
+@property (copy, nonatomic, readonly)NSString *countUS;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *countULL;
+@property (copy, nonatomic, readonly)NSNumber *countULL;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *countB;
+@property (copy, nonatomic, readonly)NSNumber *countB;
 ///
-@property (copy, nonatomic, readwrite)NSString *countS;
+@property (copy, nonatomic, readonly)NSString *countS;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *uinteger;
+@property (copy, nonatomic, readonly)NSNumber *uinteger;
 ///
-@property (copy, nonatomic, readwrite)NSString *countC;
+@property (copy, nonatomic, readonly)NSString *countC;
 ///
-@property (copy, nonatomic, readwrite)NSString *countUC;
+@property (copy, nonatomic, readonly)NSString *countUC;
 ///
-@property (copy, nonatomic, readwrite)NSString *url;
+@property (copy, nonatomic, readonly)NSString *url;
 ///
-@property (copy, nonatomic, readwrite)NSDictionary *dict;
+@property (copy, nonatomic, readonly)NSDictionary *dict;
 ///
-@property (copy, nonatomic, readwrite)NSString *countF;
+@property (copy, nonatomic, readonly)NSString *countF;
 ///
-@property (copy, nonatomic, readwrite)NSArray *list;
+@property (copy, nonatomic, readonly)NSArray *list;
 ///
-@property (copy, nonatomic, readwrite)NSDictionary *info;
+@property (copy, nonatomic, readonly)NSDictionary *info;
 ///
-@property (copy, nonatomic, readwrite)NSString *countD;
+@property (copy, nonatomic, readonly)NSString *countD;
 ///
-@property (copy, nonatomic, readwrite)NSString *name;
+@property (copy, nonatomic, readonly)NSString *name;
 ///
-@property (copy, nonatomic, readwrite)NSNumber *countLL;
+@property (copy, nonatomic, readonly)NSNumber *countLL;
 ```
 	
 #### 反序列化 
