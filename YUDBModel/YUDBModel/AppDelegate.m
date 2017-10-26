@@ -118,19 +118,19 @@
     YUDBModel_OutputProperty(baseJson);
     
     ///设置数据库路径
-    YUDBModel_SetupDBPath([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]);
+    YUDBModel_SetDBPath([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]);
     
     ///设置对象归档路径
-    YUDBModel_SetupDBPath(NSHomeDirectory());
+    YUDBModel_SetDBPath(NSHomeDirectory());
     
     ///设置数据库版本号
-    YUDBModel_SetupDBVersion(@"1.2");
+    YUDBModel_SetDBVersion(@"1.2");
     
     ///删除数据库文件
     YUDBModel_ClearDBFile();
     
     ///开启打印调试日志
-    YUDBModel_SetDBLog(YES);
+    YUDBModel_OpenDBLog(YES);
     
     NSLog(@"dbPath: %@",NSObject.dbPath);
     

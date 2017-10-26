@@ -16,16 +16,16 @@
 #import <Foundation/Foundation.h>
 
 ///设置数据库路径 非必须/默认Library/Caches
-extern void YUDBModel_SetupDBPath(NSString *path);
+extern void YUDBModel_SetDBPath(NSString *path);
 
 ///设置对象归档路径  非必须/默认Library/Caches
-extern void YUDBModel_SetupObjectPath(NSString *path);
+extern void YUDBModel_SetObjectPath(NSString *path);
 
 ///设置数据库版本号 非必须/默认1.0
-extern void YUDBModel_SetupDBVersion(NSString *version);
+extern void YUDBModel_SetDBVersion(NSString *version);
 
 ///打开日志输出 /默认false
-extern void YUDBModel_SetDBLog(BOOL on);
+extern void YUDBModel_OpenDBLog(BOOL on);
 
 ///删除数据库文件 /谨慎使用
 extern BOOL YUDBModel_ClearDBFile();
