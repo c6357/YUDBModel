@@ -29,16 +29,16 @@ YUDBModel
     extern void YUDBModel_OutputProperty(NSDictionary* json);
 
 	///设置数据库路径
-	extern void YUDBModel_SetupDBPath(NSString *path);
+	extern void YUDBModel_SetDBPath(NSString *path);
 	
 	///设置对象归档路径
-	extern void YUDBModel_SetupObjectPath(NSString *path);
+	extern void YUDBModel_SetObjectPath(NSString *path);
 	
 	///设置数据库版本号
-	extern void YUDBModel_SetupDBVersion(NSString *version);
+	extern void YUDBModel_SetDBVersion(NSString *version);
 	
 	///打开日志输出
-	extern void YUDBModel_SetDBLog(BOOL on);
+	extern void YUDBModel_OpenDBLog(BOOL on);
 	
 	///删除数据库文件
 	extern BOOL YUDBModel_ClearDBFile();
